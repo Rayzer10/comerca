@@ -1,0 +1,265 @@
+:root{
+    --color: #1824cd;
+    --texto: #dddddd;
+    --menu: #3e7a43;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('../font/roboto/Roboto-Medium.ttf');
+}
+
+body{
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 18px;
+}
+
+.page-item.active .page-link{
+    background-color: var(--color);
+}
+
+.disabled {
+    color: gray;
+    pointer-events: none;
+    text-decoration: none;
+}
+
+.bg-base-color{
+   background-color: var(--color);
+   color: #ffffff;
+}
+
+.bg-base-color:hover{
+    color: #ffffff;
+}
+
+a:not(.dropdown-item, .btn-pdf, .btn-text) > .fa-solid, a:not(.dropdown-item, .btn-text) > .fa-regular{
+    display: grid !important;
+    align-items: center;
+    height: 100%;
+    font-size: 12pt;
+}
+
+.login{
+    /* display: grid;
+    place-items: center;
+    height: 100vh; */
+    margin: 8rem auto;
+}
+
+.contenedor_login{
+    width: min(100% - 3rem, 500px);
+    margin-inline: auto;
+    /* display: grid;
+    grid-template-columns: 240px auto;
+    gap: 10px; */
+}
+
+.contenedor_login > .logo_login{
+    margin: auto;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.contenedor_login > .logo_login img{
+    width: 100%;
+    height: 100%;
+}
+
+/* .contenedor_login .imagen_login{
+    min-width: 100px;
+    min-height: 100px;
+    background-color: var(--color);
+} */
+
+.logo_body{
+    position: relative;
+    height: 60vh;
+}
+
+.logo_body::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.15;
+    z-index: -1;
+    background-image: url('../imagenes/logo_login.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar body"
+    "sidebar footer";
+}
+
+.navbars{
+   /*  background-color: #f0ea38; */
+    grid-area: header;
+}
+
+.sidebar{
+   /*  background-color: #2d2bb1; */
+    grid-area: sidebar;
+}
+
+.body{
+    /* background-color: #2baa80; */
+    grid-area: body;
+}
+
+/* .footer{
+    background-color: #a03f64;
+    grid-area: footer;
+} */
+
+main.body_data{
+    margin: 80px auto;
+    max-width: 1000px;
+}
+
+.table th{
+    font-weight: bold;
+    text-align: center !important;
+}
+
+.table{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.table td{
+    vertical-align: middle;
+}
+
+.home_message{
+    display: grid;
+    place-items: center;
+    margin-top: 30px;
+}
+
+.options{
+    /* background-color: #2a61cf; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--menu);
+}
+
+.options > .titulo{
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.options > .action{
+    margin-bottom: 6px;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--menu);
+    color: #ffffff;
+    box-sizing: border-box;
+    padding: 6px 10px;
+    /* border-bottom-left-radius: 10px; */
+    border-left: 1px solid #ffffff;
+}
+
+.navbar-container > .titulo_navbar{
+    text-transform: uppercase;
+}
+
+.navbar-container > .dropdown_navbar{
+    margin-right: 10px;
+    list-style: none;
+}
+
+.navbar-container > .dropdown_navbar .nav-link{
+    color: #ffffff;
+}
+
+.fa-eye{
+    font-size: 18px;
+    color: black;
+}
+
+.status{
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.datepicker-header{
+    background-color: var(--color);
+}
+
+@media only screen and (max-width: 600px) {
+    .menu{
+        max-width: 80px;
+    }
+    .contenedor{
+        grid-template-columns: 80px auto;
+    }
+    .form > div > div:nth-child(1){
+        margin-bottom: 1.5rem;
+    }
+    .body_data{
+        width: 93%;
+    }
+
+    .btn-width{
+        padding: .500rem .800rem .500rem;
+    }
+    .login{
+        margin: 3rem auto;
+        height: auto;
+    }
+    .contenedor_login{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contenedor_login .imagen_login{
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 1367px){
+    /* body, .table, .btn, .titulo_navbar, .titulo_navbar span{
+        font-size: 19px !important;
+    } */
+    main.body_data{
+        margin: 50px auto;
+    }
+    .lista_cards > .titulo{
+        font-size: 23px !important;
+    }
+    /* .lista_cards {
+        width: 800px;
+        margin: auto;
+    }
+    .cards{
+        gap: 10px;
+        text-align: center;
+      }
+    .card-body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .lista_cards > .titulo{
+        font-size: 22px;
+    }
+    .lista_cards .cards > .card{
+        min-width: 210px;
+    } */
+}
